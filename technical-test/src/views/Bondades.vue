@@ -24,6 +24,37 @@
         </p>
       </div>
 
+      <!-- 2. Lógica -->
+      <div class="card">
+        <h2>2️. Lógica Reutilizable (Composables)</h2>
+        <p class="desc">
+          Este ejemplo muestra un composable para paginación, muy usado en dashboards,
+          listados de usuarios, logs y módulos administrativos.
+        </p>
+
+        <div class="controls">
+          <label>
+            Items por página:
+            <select v-model="size" @change="setPageSize(size)">
+              <option v-for="n in [3,5,10]" :key="n" :value="n">{{ n }}</option>
+            </select>
+          </label>
+        </div>
+
+        <ul class="paginated-list">
+          <li v-for="item in paginatedItems" :key="item.id">
+            {{ item.name }}
+          </li>
+        </ul>
+
+        <div class="pagination-buttons">
+          <button @click="prev" :disabled="currentPage === 1">Anterior</button>
+          <span>Página {{ currentPage }} de {{ totalPages }}</span>
+          <button @click="next" :disabled="currentPage === totalPages">Siguiente</button>
+        </div>
+      </div>
+
+
 
     </div>
   </section>
@@ -32,9 +63,31 @@
 <script setup>
 import { ref, computed} from "vue";
 import ReusableButton from "../components/ReusableButton.vue";
+import usePagination from "../composables/usePagination.js";
 
 /* 1. Componentes reutilizables */
 const buttonClicks = ref(0);
+
+/* 2. Composable */
+const items = ref([
+  { id: 1, name: "Usuario 1" },
+  { id: 2, name: "Usuario 2" },
+  { id: 3, name: "Usuario 3" },
+  { id: 4, name: "Usuario 4" },
+  { id: 5, name: "Usuario 5" },
+  { id: 6, name: "Usuario 6" },
+  { id: 7, name: "Usuario 7" },
+]);
+
+const {
+  currentPage,
+  totalPages,
+  paginatedItems,
+  next,
+  prev,
+  size,
+  setPageSize,
+} = usePagination(items);
 
 </script>
 
