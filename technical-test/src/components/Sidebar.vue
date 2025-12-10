@@ -59,7 +59,7 @@
 
     <!-- Footer -->
     <div class="sidebar-footer">
-      <p>Demo técnica para Qanty</p>
+      <p>Demo técnica</p>
     </div>
   </nav>
 </template>
