@@ -310,7 +310,7 @@ function addNotif() {
   color: #991b1b;
   margin-bottom: 10px;
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 450;
 }
 
 .desc, p {
