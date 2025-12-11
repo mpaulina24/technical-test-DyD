@@ -31,6 +31,20 @@
         </router-link>
       </li>
 
+
+      <li class="divider"></li>
+
+      <li class="nav-item" role="none">
+        <router-link
+          to="/upload"
+          class="nav-link"
+          :class="{ active: isActive('/upload') }"
+          role="menuitem"
+        >
+          Cargar archivos
+        </router-link>
+      </li>
+
       <li class="divider"></li>
 
       <li class="nav-item" role="none">

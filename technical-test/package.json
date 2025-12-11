@@ -14,6 +14,12 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
+    "adm-zip": "^0.5.16",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^13.6.0",
+    "multer": "^2.0.2",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
   },

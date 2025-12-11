@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "technical-test-dyd-f45b1"
-  }
+    "default": "technical-test-dyd-f45b1",
+    "dev": "technical-test-dyd-f45b1"
+  },
+  "targets": {},
+  "etags": {}
 }
