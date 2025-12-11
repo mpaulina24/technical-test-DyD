@@ -2,7 +2,11 @@
   <nav :class="['sidenav', { collapsed }]" role="navigation">
     <!-- Header -->
     <div class="sidenav-header">
-      <h2 class="title">Vue Demo</h2>
+      <img
+        src="@/assets/logo.png"
+        alt="Logo"
+        class="w-40"
+      />
     </div>
 
     <!-- Menú -->
@@ -41,7 +45,7 @@
           :class="{ active: isActive('/upload') }"
           role="menuitem"
         >
-          Cargar archivos
+          Gestión de archivos
         </router-link>
       </li>
 
@@ -73,7 +77,10 @@
 
     <!-- Footer -->
     <div class="sidebar-footer">
-      <p>Demo técnica</p>
+       Programado por
+        <a href="https://github.com/mpaulina24" target="_blank" rel="noopener noreferrer">
+          MariaPaulinaArias
+        </a>,
     </div>
   </nav>
 </template>
@@ -98,9 +105,9 @@ const isActive = (path) => {
   left: 0;
   top: 0;
   height: 100vh;
-  width: 230px;
+  width: 240px;
   background-color: #ffffff;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  border-right: 4px solid #991b1b; 
   padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -110,15 +117,21 @@ const isActive = (path) => {
 }
 
 /* --- HEADER --- */
-.sidenav-header {
-  text-align: center;
-  margin-bottom: 2rem;
+.sidenav-header img {
+  width: 80%;         
+  max-width: 180px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
 }
 
+
 .title {
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 700;
-  color: #1e293b;
+  color: #991b1b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* --- MENÚ --- */
@@ -129,72 +142,75 @@ const isActive = (path) => {
 }
 
 .nav-item {
-  margin: 0.45rem 0;
+  margin: 0.3rem 0;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #334155;
+  color: #374151;
   font-weight: 500;
-  padding: 0.7rem 1.2rem;
+  padding: 0.75rem 1.3rem;
   text-decoration: none;
   border-radius: 6px;
-  transition: all 0.25s ease;
+  transition: all 180ms ease;
 }
 
+/* Hover corporativo */
 .nav-link:hover {
-  background-color: rgba(0, 128, 255, 0.09);
-  color: #0056b3;
-  transform: translateX(3px);
+  background-color: rgba(153, 27, 27, 0.08); /* Rojo tenue */
+  color: #991b1b;
+  transform: translateX(4px);
 }
 
+/* Opción activa */
 .nav-link.active {
-  background-color: rgba(0, 128, 255, 0.15);
-  color: #0056b3;
+  background-color: rgba(153, 27, 27, 0.15);
+  color: #991b1b;
   font-weight: 600;
+  border-left: 4px solid #f97316;
 }
 
 /* --- SEPARADORES --- */
 .divider {
   height: 1px;
   background: #e5e7eb;
-  margin: 12px 0;
-  border-radius: 2px;
+  margin: 14px 0;
 }
 
 /* --- FOOTER --- */
 .sidebar-footer {
   margin-top: auto;
-  padding: 1rem;
+  padding: 1.1rem;
   border-top: 1px solid #e5e7eb;
   text-align: center;
-  font-size: 0.8rem;
-  color: #6c757d;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.sidebar-footer a {
+  color: #991b1b;
+  font-weight: 600;
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .sidenav {
-    width: 190px;
+    width: 200px;
   }
 
   .title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 
   .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
   }
 
   .sidebar-footer {
-    font-size: 0.7rem;
-  }
-
-  /* Ajuste del contenido */
-  :global(.main-content) {
-    margin-left: 190px;
+    font-size: 0.75rem;
   }
 }
+
 </style>

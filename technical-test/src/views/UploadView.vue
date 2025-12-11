@@ -123,10 +123,122 @@ async function downloadFile(fullPath) {
 
 
 </script>
-
 <style scoped>
 .upload-section {
-  margin-left: 120px;
-  padding: 20px;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Título */
+h1 {
+  font-size: 1.6rem;  
+  font-weight: 700;
+  color: #991b1b;
+  margin-bottom: 4px;
+}
+
+/* Card contenedora */
+.upload-card {
+  background: #ffffffcc;
+  backdrop-filter: blur(4px);
+  padding: 18px;   
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+  border: 1px solid #e5e7eb;
+}
+
+/* Input de archivo */
+input[type="file"] {
+  padding: 8px 10px;  
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.15s;
+  font-size: 0.9rem; 
+}
+
+input[type="file"]:hover {
+  background: #f2f2f2;
+}
+
+/* Botón principal */
+button {
+  margin-top: 10px;
+  padding: 8px 14px;  
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #991b1b;
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #7f1515;
+}
+
+button:disabled {
+  background: #cccccc;
+}
+
+/* Título archivos */
+h2 {
+  margin-top: 10px;
+  font-size: 1.2rem; 
+  font-weight: 600;
+  color: #444;
+}
+
+/* Lista de archivos */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
+}
+
+li {
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+li button {
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  background: #2563eb;
+  border-radius: 6px;
+}
+
+li button:hover {
+  background: #1e4fc3;
+}
+
+/* Caja de debug */
+.debug-box {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff7f7;
+  border: 1px solid #ffdede;
+  color: #991b1b;
+  font-weight: 600;
+  font-size: 0.9rem;  
 }
 </style>
