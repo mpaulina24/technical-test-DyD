@@ -63,7 +63,7 @@ app.post("/process-zip", async (req, res) => {
       await storageFile.save(fileData, {
         resumable: false, // evita problemas con archivos pequeños
         contentType: "application/octet-stream",
-        public: false
+        public: true
       });
 
       // Guardar en Firestore
